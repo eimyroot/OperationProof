@@ -1,8 +1,28 @@
-# OperationProof
+<div align="center">
+  <h1>OperationProof</h1>
+  <p><strong>Bind trust evidence to one exact AI operation and verify it fail-closed.</strong></p>
+  <p>
+    <img alt="Python" src="https://img.shields.io/badge/Python-SDK-3776AB?logo=python&logoColor=white">
+    <img alt="AI governance" src="https://img.shields.io/badge/AI-governance-2563eb">
+    <img alt="Evidence" src="https://img.shields.io/badge/model-evidence%20binding-0f766e">
+    <img alt="Status" src="https://img.shields.io/badge/status-reference%20implementation-f59e0b">
+  </p>
+</div>
 
-**Vendor-neutral trust fabric and evidence connector for governed AI operations.**
+> **Portfolio status:** Reference implementation. It demonstrates proof composition and verification boundaries; it is not a claim of audited production trust infrastructure.
 
-OperationProof does not replace identity, authorization, continuity, tool-safety, data-flow, resource, or execution systems. It connects them, normalizes their evidence, binds evidence to one exact operation, verifies it fail-closed, and emits reproducible pre-operation and final proofs.
+OperationProof connects evidence from identity, authorization, intent, continuity, tool safety, data flow, resources and execution into reproducible proofs for one exact governed operation.
+
+```mermaid
+flowchart LR
+    A[Identity] --> P[Pre-operation proof]
+    B[Authorization] --> P
+    C[Intent & continuity] --> P
+    D[Tool · data · resource] --> P
+    P --> E[Governed execution]
+    E --> F[Execution evidence]
+    F --> G[Final operation proof]
+```
 
 ## Eight evidence layers
 
